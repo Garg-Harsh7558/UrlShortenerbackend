@@ -12,9 +12,8 @@ app.use(cors({
   credentials: true
 }));
 
-
 app.get("/", (req, res) => {res.send("Backend UrlShortener is running");});
 app.post("/api/shorten", fetchdb);
 app.get("/:alias", findLink);
 
-export default app;
+export default app; 
