@@ -7,7 +7,10 @@ const app = express();
 app.use(express.json());
 
 // CORS Middleware
-app.use(cors());
+app.use(cors({
+  origin: process.env.Cors_Origin || "http://localhost:5173",
+  credentials: true
+}));
 
 
 app.get("/", (req, res) => {res.send("Backend UrlShortener is running");});
